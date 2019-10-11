@@ -155,6 +155,16 @@ font-weight: bold;
 .schedule {
   margin-bottom: 30px;
 }
+.pagination li {
+    list-style: none;
+    float: left;
+    margin-left: 4px;
+}
+.pagination {
+    display: inline-block;
+    margin: 0 auto;
+}
+
 /*.pagination {*/
 /*  display: inline-block;*/
 /*}*/

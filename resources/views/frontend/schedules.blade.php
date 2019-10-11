@@ -22,16 +22,9 @@
                         <a href="{{asset('../storage/app/document/'.$schedule ->schedule_file)}}" download>{{$schedule ->schedule_file}}</a>
                     </div>
                   @endforeach
-
-                    <div style="text-align: center;">
-                        <div class="pagination">
-                            {!! $schedules->links() !!}
-                        </div>
-                    </div>
-
-
-
-
+                            <div style="text-align: center;">
+                                {{ $schedules->links('vendor.pagination.default') }}
+                            </div>
 
                 </div>
                 <div class="col span-1-of-4 des-left">
