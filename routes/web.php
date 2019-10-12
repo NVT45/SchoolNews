@@ -85,6 +85,17 @@ Route::group(['prefix'=>'admin','middleware'=>'CheckLogedOut'],function (){
         Route::get('delete/{id}','AdminAlbumsController@getDeleteAlbums');
 
     });
+    Route::group(['prefix'=>'photos'],function (){
+        Route::get('/','AdminPhotoController@getPhotos');
+
+        Route::get('add','AdminPhotoController@getAddPhotos');
+        Route::post('add','AdminPhotoController@postAddPhotos');
+
+        Route::get('edit/{id}','AdminPhotoController@getEditPhoto');
+        Route::post('edit/{id}','AdminPhotoController@postEditPhoto');
+        Route::get('delete/{id}','AdminPhotoController@getDeletePhoto');
+
+    });
 });
 
 

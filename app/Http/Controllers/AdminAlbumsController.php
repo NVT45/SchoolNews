@@ -18,7 +18,7 @@ class AdminAlbumsController extends Controller
     }
     public function postAddAlbums(Request $request){
         $this->validate($request, [
-            'name' => 'required',
+            'name' => 'bail|required|unique:sn_albums,album_name',
             'description' => 'required',
             'cover_image' => 'image|max:1999'
         ]);
