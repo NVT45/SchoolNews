@@ -22,6 +22,7 @@ Route::get('contact','FrontendController@getContact');
 Route::post('contact','FrontendController@postContact');
 Route::get('timetable','FrontendController@getTimeTable');
 Route::get('schedules','FrontendController@getSchedules');
+Route::get('gallerydetail','FrontendController@getGalleryDetail');
 Route::get('category/{id}/{slug}.html','FrontendController@getCategory');
 
 

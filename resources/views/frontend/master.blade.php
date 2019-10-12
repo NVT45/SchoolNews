@@ -10,7 +10,8 @@
     <script src="https://kit.fontawesome.com/a573142e63.js"></script>
     <link rel="stylesheet" href="{{URL::asset('vendors/css/grid.css')}}">
     <link rel="stylesheet" type="text/css" href="{{URL::asset('css/styles.css')}}">
-
+    <link rel="stylesheet" type="text/css" href="{{URL::asset('css/lightbox.min.css')}}">
+    <script src="{{URL::asset('css/lightbox-plus-jquery.min.js')}}"></script>
 </head>
 
 <body>

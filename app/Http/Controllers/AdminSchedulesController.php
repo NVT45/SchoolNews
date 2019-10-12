@@ -30,9 +30,7 @@ class AdminSchedulesController extends Controller
         $schedule = new Schedule;
         $array['schedule_title'] = $request->title;
         if($request->hasFile('sche_file')){
-            $filename = $request->file('sche_file')
-                    ->getClientOriginalName() . '.' . $request->file('sche_file')
-                    ->getClientOriginalExtension();
+            $filename = $request->file('sche_file')->getClientOriginalName();
             $array['sche_file'] = $filename;
             $request->sche_file->storeAs('document',$filename);
         }

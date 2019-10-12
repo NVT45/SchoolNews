@@ -496,8 +496,22 @@ input[type=submit] {
  .home-list-image li{
      list-style: none;
      
- } 
-
+ }
+/* -------------------------------------------------------------------- */
+/* --------------------------GALERY DETAIL----------------------------- */
+.images-detail{
+    margin: 10px 50px;
+}
+.images-detail img{
+    transition: 1s;
+    padding: 15px;
+    width: 200px;
+    height: 200px;
+}
+.images-detail img:hover{
+    filter: grayscale(100%);
+    transform: scale(1.1);
+}
 
 /* ------------------------FOOTER-------------------------------------- */
 /* -------------------------------------------------------------------- */

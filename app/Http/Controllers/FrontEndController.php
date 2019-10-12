@@ -58,6 +58,9 @@ class FrontEndController extends Controller
         $schedules = Schedule::paginate(2);
         return view('frontend.schedules',compact('schedules'));
     }
+    public function getGalleryDetail(){
+        return view('frontend.gallerydetail');
+    }
 
 
 }
