@@ -21,16 +21,45 @@ class AdminPhotoController extends Controller
         $this->validate($request, [
             'title' => 'required',
             'album_id' => 'required',
-            'photo_file' => 'image|max:1999'
+            'photo_file[]' => 'image|max:1999'
         ]);
-        $filename = time().'_'.$request->file('photo_file')->getClientOriginalName();
-        $photos = new Photo;
-        $photos->title = $request->title;
-        $photos->photo_album = $request->album_id;
-        $photos->photo_file = $filename;
-        $photos->save();
-        $request->photo_file->storeAs('Photos', $filename);
+            $input = $request->all();
+            $photo_file = array();
+        if( $files = $request->file('photo_file')){
+            foreach($files as $file){
+                $name = time().'_'.$file->getClientOriginalName();
+                $file->storeAs('Photos', $name);
+                Photo::insert( [
+                    'photo_file'=>  $name,
+                    'title' => $input['title'],
+                    'photo_album' => $input['album_id'],
+
+                    //you can put other insertion here
+                ]);
+            }
+        }
         return redirect('admin/photos')->with('success','Photos Created');
+
+//            foreach ($request->photo_file as $file){
+//                $filename = time().'_'.$file->getClientOriginalName();
+//                $file->storeAs('Photos', $filename);
+//                dd($file);
+//            }
+
+//
+
+//                $photos->save();
+//                return redirect('admin/photos')->with('success','Photos Created');
+
+//            $photos = new Photo;
+//            $photos->title = $request->title;
+//            $photos->photo_album = $request->album_id;
+//            $photos->photo_file = $filename;
+//            dd($photos);
+
+
+//        $filename = time().'_'.$request->file('photo_file')->getClientOriginalName();
+
     }
     public function getEditPhoto($id){
         $photo = Photo::findOrFail($id);

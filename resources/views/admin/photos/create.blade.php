@@ -11,9 +11,9 @@
     {!! Form::label('album_id','Category:') !!}
     {!! Form::select('album_id',[''=>'Choose Albums'] + $albums,null,['class'=>'form-control']) !!}
 </div>
-<div class="form-group">
-    {!! Form::label('photo_file','Choose Cover Image:') !!}
-    {!! Form::file('photo_file',null,['class'=>'dropzone']) !!}
+<div class="form-group " >
+    {!! Form::label('photo_file[]','Choose Cover Image:') !!}
+    <input type="file" name="photo_file[]" multiple >
 </div>
 <div class="form-group">
     {!! Form::submit('Create Photos',['class'=>'btn btn-primary']) !!}
