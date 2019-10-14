@@ -7,7 +7,7 @@
     @if($photos)
         <thead>
         <tr>
-            <th>Id</th>
+            <th>Album</th>
             <th>Title</th>
             <th>Image</th>
             <th>Created_at</th>
@@ -17,7 +17,7 @@
         <tbody>
         @foreach($photos as $photo)
             <tr>
-                <td>{{$photo -> photo_id}}</td>
+                <td>{{$photo -> album->album_name}}</td>
                 <td><a href="{{asset('admin/photos/edit/'.$photo -> photo_id)}}">{{$photo -> title}}</a></td>
                 <td><img height="50" src="{{asset('../storage/app/Photos/'.$photo->photo_file)}}" alt=""></td>
                 <td>{{$photo -> created_at ?$photo -> created_at : 'No date' }}</td>
@@ -25,6 +25,8 @@
             </tr>
         @endforeach
         </tbody>
+
 </table>
+{!! $photos->links() !!}
 @endif
 @stop

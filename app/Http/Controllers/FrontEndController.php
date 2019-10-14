@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Album;
 use App\Models\Category;
 use App\Models\News;
+use App\Models\Photo;
 use App\Models\Schedule;
 use Illuminate\Http\Request;
 use App\Models\Type;
@@ -30,7 +32,7 @@ class FrontEndController extends Controller
         return view('frontend.listtype',compact('type','listnews','featured'));
     }
     public function getNews($id){
-       $news = News::find($id);
+        $news = News::find($id);
         return view('frontend.newsdetail',compact('news'));
     }
     public function getHome(){
@@ -58,8 +60,14 @@ class FrontEndController extends Controller
         $schedules = Schedule::paginate(2);
         return view('frontend.schedules',compact('schedules'));
     }
-    public function getGalleryDetail(){
-        return view('frontend.gallerydetail');
+    public function getGalleryDetail($id){
+        $album = Album::find($id);
+        $photos = Photo::where('photo_album',$id)->get();
+        return view('frontend.gallerydetail',compact('album','photos'));
+    }
+    public function getGallery(){
+        $albums = Album::all();
+        return view('frontend.gallery',compact('albums'));
     }
 
 
