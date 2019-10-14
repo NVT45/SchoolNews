@@ -480,6 +480,13 @@ input[type=submit] {
 .home-list-image{
   width: 100%;
 }
+.home-list-image a{
+    margin-top: 0px;
+    float: right;
+    font-size: 12px;
+    list-style: none;
+    text-decoration: none;
+}
 .home-list-image img{
     width: 130px;
  }

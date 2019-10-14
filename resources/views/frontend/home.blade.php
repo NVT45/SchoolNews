@@ -97,6 +97,7 @@
                                     <img src="{{URL::asset('images/home-img2.jpg')}}" alt="">
                                 </li>
                             </ul>
+                            <a href="{{asset('gallery')}}">Xem thêm...</a>
                         </div>
                     </div>
                 </div>
