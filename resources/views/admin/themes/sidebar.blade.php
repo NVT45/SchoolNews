@@ -83,6 +83,44 @@
             </div>
         </div>
     </li>
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSchedule" aria-expanded="true" aria-controls="collapseUtilities">
+            <i class="fas fa-fw fa-wrench"></i>
+            <span>Schedules</span>
+        </a>
+        <div id="collapseSchedule" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Options</h6>
+                <a class="collapse-item" href="{{asset('admin/schedule')}}">All Schedule</a>
+            </div>
+        </div>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAlbum" aria-expanded="true" aria-controls="collapseUtilities">
+            <i class="fas fa-fw fa-wrench"></i>
+            <span>Albums</span>
+        </a>
+        <div id="collapseAlbum" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Options</h6>
+                <a class="collapse-item" href="{{asset('admin/albums')}}">All Album</a>
+                <a class="collapse-item" href="{{asset('admin/albums/add')}}">Create Album</a>
+            </div>
+        </div>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePhoto" aria-expanded="true" aria-controls="collapseUtilities">
+            <i class="fas fa-fw fa-wrench"></i>
+            <span>Photos</span>
+        </a>
+        <div id="collapsePhoto" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Options</h6>
+                <a class="collapse-item" href="{{asset('admin/photos')}}">All Album</a>
+                <a class="collapse-item" href="{{asset('admin/photos/add')}}">Create Album</a>
+            </div>
+        </div>
+    </li>
 
     <!-- Divider -->
     <hr class="sidebar-divider">

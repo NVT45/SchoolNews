@@ -30,15 +30,17 @@ class AdminSchedulesController extends Controller
         $schedule = new Schedule;
         $array['schedule_title'] = $request->title;
         if($request->hasFile('sche_file')){
-            $filename = $request->file('sche_file')->getClientOriginalName();
-            $array['sche_file'] = $filename;
+            $filename = $request->sche_file->getClientOriginalName();
+            $array['schedule_file'] = $filename;
             $request->sche_file->storeAs('document',$filename);
         }
         $schedule::where('schedule_id',$id)->update($array);
         return redirect('admin/schedule');
     }
     public function getDeleteSchedule($id){
-        Schedule::destroy($id);
-        return back();
+        $schedule = Schedule::findOrFail($id);
+        unlink(storage_path('app/document/'.$schedule->schedule_file));
+        $schedule -> delete();
+        return redirect('admin/schedule')->with('success','Deleted');
     }
 }

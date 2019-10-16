@@ -2,7 +2,7 @@
 @section('content')
 @section('pagehead','Schedules')
 <div class="col-sm-6">
-    {!! Form::model($schedule,['method'=>'POST']) !!}
+    {!! Form::model($schedule,['method'=>'POST','files'=>true]) !!}
     {{ csrf_field() }}
     <div class="form-group">
         {!! Form::label('title','Title:') !!}
