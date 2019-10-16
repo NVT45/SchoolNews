@@ -23,7 +23,7 @@
                     </div>
                   @endforeach
                             <div style="text-align: center;">
-                                {{ $schedules->links('vendor.pagination.default') }}
+                                {{ $schedules->links('vendor.pagination.custom') }}
                             </div>
 
                 </div>
