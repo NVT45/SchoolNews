@@ -27,12 +27,9 @@
                 <img src="{{asset('../storage/app/images/'.$news->news_image)}}" alt="">
                 <h1>{{$news->title}}</h1>
                 <span>Ngày đăng:{{$news->created_at}}</span>
-                <p class="p-long">
-                    {{$news->news_description}}
-                </p>
-
-
-
+                <div class="p-long">
+                    {!! $news->news_description !!}
+                </div>
 
             </div>
             <div class="col span-1-of-4 des-left">

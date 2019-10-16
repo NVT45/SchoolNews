@@ -10,7 +10,7 @@
         </div>
         <div class="form-group" >
             <label>Ảnh bài viết</label>
-            <input required  type="file" name="image" class="form-control hidden" onchange="changeImg(this)">
+            <input  type="file" name="image" class="form-control hidden" onchange="changeImg(this)">
             <img id="avatar" class="thumbnail" width="300px" src="{{asset('../storage/app/images/'.$news->news_image)}}" alt="Vui lòng chọn ảnh ">
         </div>
         <div class="form-group" >
