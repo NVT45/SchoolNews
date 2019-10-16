@@ -57,7 +57,7 @@ class FrontEndController extends Controller
         return view('frontend.timetable');
     }
     public function getSchedules(){
-        $schedules = Schedule::paginate(5);
+        $schedules = Schedule::paginate(5)->OnEachSide(2);
         return view('frontend.schedules',compact('schedules'));
     }
     public function getGalleryDetail($id){

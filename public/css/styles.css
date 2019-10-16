@@ -176,37 +176,46 @@ font-weight: bold;
 .schedule {
   margin-bottom: 30px;
 }
-.pagination li {
-    list-style: none;
-    float: left;
-    margin-left: 4px;
-}
-.pagination {
-    display: inline-block;
-    margin: 0 auto;
-}
-
+/*.pagination li {*/
+/*    list-style: none;*/
+/*    float: left;*/
+/*    margin-left: 4px;*/
+/*}*/
 /*.pagination {*/
-/*  display: inline-block;*/
+/*    display: inline-block;*/
+/*    margin: 0 auto;*/
 /*}*/
 
+.paginate{
+    left: 50%;
+    top: 50%;
+    margin: 0;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 40px;
+}
+.paginate li {
+    display: inline-block;
+    list-style: none;
+}
+.paginate li a {
+    display: block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    background-color: #fff;
+    text-align: center;
+    text-decoration: none;
+    color: #252525;
+    border-radius: 4px;
+    box-shadow: inset 0 5px 10px rgba(0,0,0,.1), 0 2px 5px rgba(0,0,0,.5);
+}
+.paginate a.active {
+    background-color: orangered;
+    color: white;
+    border-radius: 5px;
+}
 
-/*.pagination a {*/
-/*  color: black;*/
-/*  float: left;*/
-/*  padding: 8px 16px;*/
-/*  text-decoration: none;*/
-/*  transition: background-color .3s;*/
-/*  border: 1px solid #ddd;*/
-/*}*/
-
-/*.pagination a.active {*/
-/*  background-color: rgb(224, 64, 36);*/
-/*  color: white;*/
-/*  border: 1px solid rgb(224, 64, 36);*/
-/*}*/
-
-/*.pagination a:hover:not(.active) {background-color: #ddd;}*/
 
 /* --------------------CONTACT------------------------------ */
 .contact-information{
