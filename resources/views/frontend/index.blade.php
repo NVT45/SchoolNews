@@ -60,15 +60,39 @@
                 <div class="col span-1-of-4 des-left">
                     <div class="des-right">
                         <h3>TIỆN ÍCH</h3>
-                        <ul>
-                            <li><img src="{{URL::asset('images/iphone.jpg')}}" alt=""><a href=""><strong>SỔ LIÊN LẠC ĐIỆN
-                                        TỬ</strong> </a></li>
-                            <li><img src="{{URL::asset('images/teacher.jpg')}}" alt=""><a href=""><strong>QUẢN LÝ GIÁO
-                                        VIÊN</strong> </a></li>
-                            <li><img src="{{URL::asset('images/download.jpg')}}" alt=""><a href=""><strong>DOWNLOAD
-                                        PHẦN
-                                        MỀM</strong> </a></li>
-                        </ul>
+                        <div class="row des-right-border">
+                            <div class="col span-1-of-4 des-right-img">
+                                <img src="{{asset('images/iphone.jpg')}}" alt="">
+
+                            </div>
+                            <div class="col span-3-of-4 des-right-title">
+                                <a href="">SỔ LIÊN LẠC ĐIỆN TỬ</a>
+                                <p> Kết nối nhà trường và phụ huynh</p>
+                            </div>
+
+                        </div>
+                        <div class="row des-right-border">
+                            <div class="col span-1-of-4 des-right-img">
+                                <img src="{{asset('images/teacher.jpg')}}" alt="">
+
+                            </div>
+                            <div class="col span-3-of-4 des-right-title">
+                                <a href="">quản lý giáo viên</a>
+                                <p>Tra cứu danh sách cán bộ</p>
+                            </div>
+
+                        </div>
+                        <div class="row des-right-border">
+                            <div class="col span-1-of-4 des-right-img">
+                                <img src="{{asset('images/download.jpg')}}" alt="">
+
+                            </div>
+                            <div class="col span-3-of-4 des-right-title">
+                                <a href="">download phần mềm </a>
+                                <p>Hỗ trợ giảng dạy học tập</p>
+                            </div>
+
+                        </div>
                     </div>
 
                 </div>

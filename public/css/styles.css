@@ -89,7 +89,7 @@ font-weight: bold;
 }
 .des-left h3 {
   background:  rgb(30, 59, 224);
-  height: 30px;
+  /*height: 30px;*/
   text-align: center;
   color: whitesmoke;
   font-size: 15px;
@@ -107,17 +107,38 @@ font-weight: bold;
 }
 
 /* --------des-left-right---------  */
-.des-left img {
-    width: 40px;
-    vertical-align: middle;
-    border-radius: 10%;
+/*.des-left img {*/
+/*    width: 40px;*/
+/*    vertical-align: middle;*/
+/*    border-radius: 10%;*/
+/*}*/
+/*.des-right ul li a{*/
+/*  color:  rgb(30, 59, 224);*/
+/*}*/
+/* fixxxxxxx */
+.des-right-img img{
+    width: 80%;
 }
-.des-right ul li a{
-  color:  rgb(30, 59, 224);
+.des-right-title a{
+    font-size: 15px;
+    text-transform: uppercase;
+    color: rgb(30, 59, 224);
+    text-decoration: none;
+}
+.des-right-title p{
+    font-size: 13px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.des-right-border {
+    border-bottom: 1px dotted black;
+    font-weight: bold;
+    margin-top: 5px;
 }
 
+/* end fixx */
 .des-middle img {
   width: 100%;
+    height: 400px;
 }
 
 .des-middle span {
