@@ -16,4 +16,5 @@
         <span class="info">Nội dung: </span>
         {{$infor['description']}}
     </p>
+    Cảm ơn bạn đã góp ý, chúng tôi sẽ liên hệ giải quyết vấn đề sớm .
 </div>

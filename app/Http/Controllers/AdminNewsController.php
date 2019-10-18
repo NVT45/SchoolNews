@@ -25,7 +25,7 @@ class AdminNewsController extends Controller
         $news->news_description = $request->description;
         $news->save();
         $request->image->storeAs('images',$filename);
-        return back();
+        return redirect('admin/news')->with('success','News Created');
 
     }
     public function getNews(){

@@ -36,7 +36,7 @@ class FrontEndController extends Controller
         return view('frontend.newsdetail',compact('news'));
     }
     public function getHome(){
-        $news = DB::table('sn_news')->where('news_featured', '=', 1)->take(3)->get();
+        $news = DB::table('sn_news')->where('news_featured', '=', 1)->orderBy('news_id','DESC')->take(3)->get();
         return view('frontend.home',compact('news'));
     }
     public function getContact(){
@@ -69,6 +69,8 @@ class FrontEndController extends Controller
         $albums = Album::all();
         return view('frontend.gallery',compact('albums'));
     }
-
+    public function getIndex(){
+        return view('admin.index');
+    }
 
 }

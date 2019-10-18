@@ -32,6 +32,7 @@ Route::group(['prefix'=>'login','middleware'=>'CheckLogedIn'],function (){
     Route::post('/','LoginController@postLogin');
 });
 Route::group(['prefix'=>'admin','middleware'=>'CheckLogedOut'],function (){
+    Route::get('/','FrontendController@getIndex');
     Route::group(['prefix'=>'category'],function (){
     Route::get('/','AdminCategoryController@getCate');
     Route::post('/','AdminCategoryController@postCate');
