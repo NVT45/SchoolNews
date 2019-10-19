@@ -4,7 +4,83 @@
         <section class="home">
             <div class="home-responsive">
                 <div class="home-img">
-                    <img src="{{URL::asset('images/trang_chu.png')}}" alt="">
+                      <!-- Full-width images with number and caption text -->
+                            <div class="slider" id="main-slider"><!-- outermost container element -->
+                                <div class="slider-wrapper"><!-- innermost wrapper element -->
+                                    <img src="{{URL::asset('images/trang_chu.png')}}" alt="First" class="slide" /><!-- slides -->
+                                    <img src="{{URL::asset('images/home-slide.jpg')}}" alt="Second" class="slide" />
+                                    <img src="{{URL::asset('images/home-slide3.jpg')}}" alt="Third" class="slide" />
+                                </div>
+                            </div>  
+                          <script>
+                           (function() {
+    
+    function Slideshow( element ) {
+        this.el = document.querySelector( element );
+        this.init();
+    }
+    
+    Slideshow.prototype = {
+        init: function() {
+            this.wrapper = this.el.querySelector( ".slider-wrapper" );
+            this.slides = this.el.querySelectorAll( ".slide" );
+            this.previous = this.el.querySelector( ".slider-previous" );
+            this.next = this.el.querySelector( ".slider-next" );
+            this.index = 0;
+            this.total = this.slides.length;
+            this.timer = null;
+            
+            this.action();
+            this.stopStart();   
+        },
+        _slideTo: function( slide ) {
+            var currentSlide = this.slides[slide];
+            currentSlide.style.opacity = 1;
+            
+            for( var i = 0; i < this.slides.length; i++ ) {
+                var slide = this.slides[i];
+                if( slide !== currentSlide ) {
+                    slide.style.opacity = 0;
+                }
+            }
+        },
+        action: function() {
+            var self = this;
+            self.timer = setInterval(function() {
+                self.index++;
+                if( self.index == self.slides.length ) {
+                    self.index = 0;
+                }
+                self._slideTo( self.index );
+                
+            }, 3000);
+        },
+        stopStart: function() {
+            var self = this;
+            self.el.addEventListener( "mouseover", function() {
+                clearInterval( self.timer );
+                self.timer = null;
+                
+            }, false);
+            self.el.addEventListener( "mouseout", function() {
+                self.action();
+                
+            }, false);
+        }
+        
+        
+    };
+    
+    document.addEventListener( "DOMContentLoaded", function() {
+        
+        var slider = new Slideshow( "#main-slider" );
+        
+    });
+    
+    
+})();
+
+                            </script>
                 </div>
                 <div class="row">
                     <div class=" col span-3-of-5 border-home-news">
@@ -35,20 +111,20 @@
                             <!-- Full-width images with number and caption text -->
                             <div class="mySlides fade">
                                 <div class="numbertext">1 / 3</div>
-                                <img src="{{URL::asset('images/view.jpg')}}" style="width:100%">
-                                <div class="text">Caption Text</div>
+                                <img class="img-show" src="{{URL::asset('images/view.jpg')}}" style="width:100%">
+
                             </div>
 
                             <div class="mySlides fade">
                                 <div class="numbertext">2 / 3</div>
-                                <img src="{{URL::asset('images/begiang2.jpg')}}" style="width:100%">
-                                <div class="text">Caption Two</div>
+                                <img class="img-show" src="{{URL::asset('images/begiang2.jpg')}}" style="width:100%">
+
                             </div>
 
                             <div class="mySlides fade">
                                 <div class="numbertext">3 / 3</div>
-                                <img src="{{URL::asset('images/phatbieu.jpg')}}" style="width:100%">
-                                <div class="text">Caption Three</div>
+                                <img class="img-show" src="{{URL::asset('images/phatbieu.jpg')}}" style="width:100%">
+
                             </div>
 
                             <!-- Next and previous buttons -->
@@ -58,32 +134,25 @@
                         <br>
 
                         <script>
-                            var slideIndex = 1;
-                            showSlides(slideIndex);
-
-                            function plusSlides(n) {
-                                showSlides(slideIndex += n);
-                            }
-
-                            function currentSlide(n) {
-                                showSlides(slideIndex = n);
-                            }
-
-                            function showSlides(n) {
+                            var slideIndex = 0;
+                            showSlides();
+                            function showSlides() {
                                 var i;
                                 var slides = document.getElementsByClassName("mySlides");
-                                var dots = document.getElementsByClassName("dot");
-                                if (n > slides.length) {slideIndex = 1}
-                                if (n < 1) {slideIndex = slides.length}
+                                var dots = document.getElementsByClassName("img-show");
                                 for (i = 0; i < slides.length; i++) {
                                     slides[i].style.display = "none";
                                 }
+                                slideIndex++;
+                                if (slideIndex > slides.length) {slideIndex = 1}
                                 for (i = 0; i < dots.length; i++) {
                                     dots[i].className = dots[i].className.replace(" active", "");
                                 }
                                 slides[slideIndex-1].style.display = "block";
                                 dots[slideIndex-1].className += " active";
+                                setTimeout(showSlides, 2000); // Change image every 2 seconds
                             }
+
                         </script>
                         <div class="row home-list-image">
                             <ul>

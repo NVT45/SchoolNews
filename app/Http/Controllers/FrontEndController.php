@@ -70,7 +70,11 @@ class FrontEndController extends Controller
         return view('frontend.gallery',compact('albums'));
     }
     public function getIndex(){
-        return view('admin.index');
+        $categories = Category::all();
+        $news = News::all();
+        $albums = Album::all();
+        $photos = Photo::all();
+        return view('admin.index',compact('categories','news','albums','photos'));
     }
 
 }

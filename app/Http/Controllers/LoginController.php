@@ -18,7 +18,7 @@ class LoginController extends Controller
                 $remember =false;
             }
             if( Auth::attempt($array,$remember)){
-               return redirect()->intended('admin/category');
+               return redirect()->intended('admin');
             }else{
                 return back()->withInput()->with('error','Tài khoản hoặc mật khẩu chưa đúng');
             }

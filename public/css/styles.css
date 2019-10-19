@@ -603,3 +603,24 @@ h2:after{
   margin-top: 0px;
 }
 
+/*----------------------SLIDE HOME TOP-------------------------------------*/
+
+.slider-wrapper {
+  width: 100%;
+  height: 500px;
+    position: relative;
+    margin-top: 5px;
+}
+
+.slide {
+  float: left;
+  position: absolute;
+  width: 100%;
+  height: 500px;
+  opacity: 0;
+  transition: opacity 3s linear;
+}
+
+.slider-wrapper > .slide:first-child {
+  opacity: 1;
+}
