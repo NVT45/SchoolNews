@@ -16,8 +16,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('home','FrontendController@getHome');
-Route::get('type/{id}/{slug}.html','FrontendController@getTypes');
-Route::get('news/{id}/{slug}.html','FrontendController@getNews');
+Route::get('type/{id}/{cateid}/{slug}.html','FrontendController@getTypes');
+Route::get('news/{id}/{cateid}/{slug}.html','FrontendController@getNews');
 Route::get('contact','FrontendController@getContact');
 Route::post('contact','FrontendController@postContact');
 Route::get('timetable','FrontendController@getTimeTable');

@@ -5,10 +5,12 @@
 
         <div class="row">
             <div class="col span-1-of-4 des-left">
-                <h3></h3>
+                <h3>{{$catename->cate_name}}</h3>
                 <div class="des-left-top">
                     <ul>
-
+                        @foreach($gettypes as $type)
+                            <li><i class="fas fa-arrow-right"></i></i><a href="{{asset('type/'.$type->type_id.'/'.$type->category->cate_id.'/'.$type->type_slug.'.html')}}">{{$type->type_name}}</a></li>
+                        @endforeach
                     </ul>
                 </div>
 
@@ -24,7 +26,7 @@
             </div>
             <div class="col span-2-of-4 des-middle">
 
-                <img src="{{asset('../storage/app/images/'.$news->news_image)}}" alt="">
+                <img class="index-news-img" src="{{asset('../storage/app/images/'.$news->news_image)}}" alt="">
                 <h1>{{$news->title}}</h1>
                 <span>Ngày đăng:{{$news->created_at}}</span>
                 <div class="p-long">

@@ -7,9 +7,11 @@
             <div class="col span-1-of-4 des-left">
                 <h3>{{$type->category->cate_name}}</h3>
                 <div class="des-left-top">
-                    <ul>
-                        <li><i class="fas fa-arrow-right"></i></i><a href="{{asset('type/'.$type->type_id.'/'.$type->type_slug.'.html')}}">{{$type->type_name}}</a></li>
 
+                    <ul>
+                        @foreach($gettypes as $type)
+                        <li><i class="fas fa-arrow-right"></i></i><a href="{{asset('type/'.$type->type_id.'/'.$type->category->cate_id.'/'.$type->type_slug.'.html')}}">{{$type->type_name}}</a></li>
+                        @endforeach
                     </ul>
                 </div>
 
@@ -26,19 +28,25 @@
             <div class="col span-2-of-4 des-middle">
                 <div class="index-news">
 
-                    <img src="{{asset('../storage/app/images/'.$featured['news_image'])}}" alt="">
-                    <a href="{{asset('news/'.$featured['news_id'].'/'.$featured['news_slug'].'.html')}}">{{$featured['news_title']}}</a>
+                    <img class="index-news-img" src="{{asset('../storage/app/images/'.$featured['news_image'])}}" alt="">
+                    <a href="{{asset('news/'.$featured['news_id'].'/'.$cate->cate_id.'/'.$featured['news_slug'].'.html')}}">{{$featured['news_title']}}</a>
                     <span>Ngày đăng:{{$featured['created_at']}}</span>
                     <p class="p-long">
                         {{$featured['news_short_des']}}
                     </p>
                 </div>
+                <div class="news-bar"> 
+                       
+                            <img class="news-bar-img" src="{{asset('images/open-book.png')}}" alt="">
+                      
+                          Tin tức
+                    </div>
                 <div class="list-news">
                     <ul>
                         @foreach($listnews as $news)
                             <li>
                                 <img src="{{asset('../storage/app/images/'.$news->news_image)}}" alt="">
-                                <a href="{{asset('news/'.$news->news_id.'/'.$news->news_slug.'.html')}}">{{$news->news_title}}</a>
+                                <a href="{{asset('news/'.$news->news_id.'/'.$news-> type ->category->cate_id.'/'.$news->news_slug.'.html')}}">{{$news->news_title}}</a>
                                 <p>{{$news->news_short_des}}</p>
                             </li>
                         @endforeach

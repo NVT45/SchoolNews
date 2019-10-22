@@ -9,7 +9,7 @@
                     <div class="des-left-top">
                         <ul>
                             @foreach($types as $type)
-                                <li><i class="fas fa-arrow-right"></i><a href="{{asset('type/'.$type->type_id.'/'.$type->type_slug.'.html')}}">{{$type->type_name}}</a></li>
+                                <li><i class="fas fa-arrow-right"></i><a href="{{asset('type/'.$type->type_id.'/'.$type->category->cate_id.'/'.$type->type_slug.'.html')}}">{{$type->type_name}}</a></li>
                             @endforeach
                         </ul>
                     </div>
@@ -28,8 +28,8 @@
                     <div class="index-news">
                         @if ($featured)
 
-                        <img src="{{asset('../storage/app/images/'.$featured->news_image)}}" alt="">
-                        <a href="{{asset('news/'.$featured->news_id.'/'.$featured->news_slug.'.html')}}">{{$featured->news_title}}</a>
+                        <img class="index-news-img" src="{{asset('../storage/app/images/'.$featured->news_image)}}" alt="">
+                        <a href="{{asset('news/'.$featured->news_id.'/'.$catename->cate_id.'/'.$featured->news_slug.'.html')}}">{{$featured->news_title}}</a>
                         <span>Ngày đăng:{{$featured->created_at}}</span>
                         <p class="p-long">
                             {{$featured->news_short_des}}
@@ -39,6 +39,12 @@
 
 
                         @endif
+                    </div>
+                     <div class="news-bar"> 
+                       
+                            <img class="news-bar-img" src="{{asset('images/open-book.png')}}" alt="">
+                      
+                          Tin tức
                     </div>
                     <div class="list-news">
                         <ul>

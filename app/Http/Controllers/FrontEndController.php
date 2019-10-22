@@ -25,15 +25,19 @@ class FrontEndController extends Controller
         $featured = $newslist->shift();
         return view('frontend.index',compact('catename','types','newslist','featured'));
     }
-    public function getTypes($id){
+    public function getTypes($id,$cateid){
+        $cate = Category::find($cateid);
+        $gettypes = Type::where('type_cate',$cateid)->orderBy('type_id','ASC')->get();
         $type = Type::find($id);
         $listnews = News::where('news_type',$id)->orderBy('news_id','ASC')->get();
         $featured = $listnews->shift();
-        return view('frontend.listtype',compact('type','listnews','featured'));
+        return view('frontend.listtype',compact('type','listnews','featured','gettypes','cate'));
     }
-    public function getNews($id){
+    public function getNews($id,$cateid){
+        $catename= Category::find($cateid);
+        $gettypes = Type::where('type_cate',$cateid)->orderBy('type_id','ASC')->get();
         $news = News::find($id);
-        return view('frontend.newsdetail',compact('news'));
+        return view('frontend.newsdetail',compact('news','catename','gettypes'));
     }
     public function getHome(){
         $news = DB::table('sn_news')->where('news_featured', '=', 1)->orderBy('news_id','DESC')->take(3)->get();
