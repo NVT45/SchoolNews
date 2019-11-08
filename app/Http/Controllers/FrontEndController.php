@@ -40,7 +40,8 @@ class FrontEndController extends Controller
         return view('frontend.newsdetail',compact('news','catename','gettypes'));
     }
     public function getHome(){
-        $news = DB::table('sn_news')->where('news_featured', '=', 1)->orderBy('news_id','DESC')->take(3)->get();
+        $news = News::where('news_featured', '=', 1)->orderBy('news_id','DESC')->take(3)->get();
+//        $news = DB::table('sn_news')->where('news_featured', '=', 1)->orderBy('news_id','DESC')->take(3)->get();
         return view('frontend.home',compact('news'));
     }
     public function getContact(){
@@ -53,6 +54,7 @@ class FrontEndController extends Controller
 
             $message->from('tranhatranha4@gmail.com','Trần Hà');
             $message->to($email, $email);
+            $message->cc('nvthuan45@gmail.com', 'School');
             $message->subject('Hòm thư góp ý');
         });
         return back();
@@ -79,6 +81,15 @@ class FrontEndController extends Controller
         $albums = Album::all();
         $photos = Photo::all();
         return view('admin.index',compact('categories','news','albums','photos'));
+    }
+
+    public function getSearch(Request $request){
+        $result = $request->result;
+        $data['key'] = $result;
+        $result = str_replace(' ','%',$result);
+        $data['news'] = News::where('news_title','like','%'.$result.'%')->get();
+        return view('admin.search',$data);
+
     }
 
 }

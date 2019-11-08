@@ -88,7 +88,7 @@
                         <div class="col span-1-of-3 fix-top">
                             <div class="home-news">
                                 <div class="title-home-news">
-                                    <h1>{{$onews->news_title}}</h1>
+                                    <h1>{{str_limit($onews->news_title,50)}}</h1>
                                     <span>{{$onews->created_at}}</span>
                                 </div>
 
@@ -96,7 +96,7 @@
                                 <p>
 
                                     {{str_limit($onews->news_short_des,200)}}
-                                    <a href="{{asset('news/'.$onews->news_id.'/'.$onews->news_slug.'.html')}}">Đọc tiếp ></a>
+                                    <a href="{{asset('news/'.$onews->news_id.'/'.$onews -> type ->category ->cate_id.'/'.$onews->news_slug.'.html')}}">Đọc tiếp ></a>
                                 </p>
                             </div>
 

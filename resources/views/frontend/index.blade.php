@@ -11,6 +11,7 @@
                             @foreach($types as $type)
                                 <li><i class="fas fa-arrow-right"></i><a href="{{asset('type/'.$type->type_id.'/'.$type->category->cate_id.'/'.$type->type_slug.'.html')}}">{{$type->type_name}}</a></li>
                             @endforeach
+
                         </ul>
                     </div>
 
@@ -51,7 +52,7 @@
                             @foreach($newslist as $news)
                             <li>
                                 <img src="{{asset('../storage/app/images/'.$news->news_image)}}" alt="">
-                                <a href="{{asset('news/'.$news->news_id.'/'.$news->news_slug.'.html')}}">{{$news->news_title}}</a>
+                                <a href="{{asset('news/'.$news->news_id.'/'.$catename->cate_id.'/'.$news->news_slug.'.html')}}">{{$news->news_title}}</a>
                                 <p>{{$news->news_short_des}}</p>
                             </li>
                             @endforeach

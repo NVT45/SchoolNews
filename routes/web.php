@@ -15,6 +15,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('search','FrontendController@getSearch');
 Route::get('home','FrontendController@getHome');
 Route::get('type/{id}/{cateid}/{slug}.html','FrontendController@getTypes');
 Route::get('news/{id}/{cateid}/{slug}.html','FrontendController@getNews');
